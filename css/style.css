@@ -1,1 +1,279 @@
-/* add all items from grading group 3 and 4. Search for items in group 5 that refer to css f.e. z index */ 
+/* add all items from grading group 3 and 4. Search for items in group 5 that refer to css f.e. z index */ /* add all items from grading group 3 and 4. Search for items in group 5 that refer to css f.e. z index */
+
+/* body is the grid that lays out the whole document outline:
+   header (full width) / section.main + section.sidebar (two columns) / footer (full width) */
+body {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  align-items: start;
+  gap: 40px 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  background-color: #f6f0e2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* the top-level header and footer are direct children of body,
+   so they span both grid columns and break out to full viewport width */
+body > header,
+body > footer.site-footer {
+  grid-column: 1 / -1;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+p {
+  color: magenta;
+}
+
+header {
+  text-align: center;
+  font-size: 40px;
+}
+
+body > header nav {
+  background-color: #222;
+  border-bottom: none;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li:first-child {
+  margin-right: auto;
+}
+
+.nav li:first-child a:hover {
+  background-color: gold;
+  color: #222;
+}
+
+.nav li:last-child {
+  margin-left: auto;
+}
+
+.nav li {
+  margin: 0 10px;
+}
+
+.nav a {
+  display: block;
+  padding: 15px 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background-color 0.2s ease;
+}
+
+.nav a:hover {
+  background-color: #444;
+}
+
+/* Left column: welcome header + articles + cta footer */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.intro {
+  text-align: left;
+  font-size: 16px;
+}
+
+/* the generic `header { text-align: center }` rule above inherits down
+   into any header nested inside these articles/sections — override it */
+article > header,
+.scene > header {
+  text-align: left;
+}
+
+.intro h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.08;
+  max-width: 14ch;
+  margin: 0 0 18px;
+  color: #22303a;
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(34, 48, 58, 0.12);
+}
+
+article.intro h2,
+.scene h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  color: #22303a;
+  margin: 0;
+}
+
+.intro p,
+.scene p {
+  font-size: 17px;
+  color: #5a6b71;
+  max-width: 62ch;
+  margin: 10px 0 0;
+}
+
+/* Meta line inside each article's own footer */
+.article-meta {
+  color: #9aa7ab;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* article.scene: photo on the left spanning both rows, heading + paragraph
+   stacked in the right column. The figure is explicitly spanned across 2
+   rows; the header and p that follow it auto-place into the remaining
+   column-2 cells, one per row. */
+.scene {
+  border-top: 1px solid rgba(34, 48, 58, 0.12);
+  border-bottom: 1px solid rgba(34, 48, 58, 0.12);
+  padding: 26px 0;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 24px;
+  row-gap: 6px;
+}
+
+.scene__photo {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  height: 220px;
+  margin: 0;
+}
+
+.scene > header {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.scene > p {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.scene__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(34, 48, 58, 0.12);
+}
+
+.cta-row {
+  margin-top: 4px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.cta {
+  display: inline-block;
+  background: #dd5b2e;
+  color: #fff6ee;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.cta:hover {
+  background: #b8471f;
+  transform: translateY(-1px);
+}
+
+/* Right column: "Find your way in" card */
+.sidebar {
+  background-color: #1f3d3a;
+  color: #f6f0e2;
+  border-radius: 14px;
+  padding: 28px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.sidebar h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  margin: 0 0 6px;
+  color: #ffffff;
+}
+
+.sidebar p {
+  color: #b8c7c2;
+  font-size: 14px;
+  margin: 0 0 18px;
+  max-width: none;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  border-top: 1px solid rgba(246, 240, 226, 0.15);
+}
+
+.sidebar li:last-child {
+  border-bottom: 1px solid rgba(246, 240, 226, 0.15);
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 4px;
+  color: #f6f0e2;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.sidebar a:hover {
+  color: #f2b263;
+}
+
+.sidebar__icon {
+  font-size: 16px;
+}
+
+/* Site footer */
+.site-footer {
+  border-top: 1px solid rgba(34, 48, 58, 0.12);
+  padding: 24px;
+  text-align: center;
+}
+
+.site-footer p {
+  color: #5a6b71;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Stack the two sections on narrow screens */
+@media (max-width: 800px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+}

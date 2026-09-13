@@ -1,32 +1,80 @@
-<!DOCTYPE html>
+<!-- add all items from grading group 1 and 2. Search for items in group 5 that refer to css f.e. author attribute value-->
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-     <header>
-        <h1>My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Markup Starter</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Culture & Manners</a></li>
+          <li><a href="#">Food to Try</a></li>
+          <li><a href="#">Place to Visit</a></li>
+          <li><a href="#">Music & Culture</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <section>
-        <header>
-            <h2>Welcome to My Website</h2>
-        </header>
+    <section class="main">
+      <header class="intro">
+        <h1>Welcome to the Smiling Coast</h1>
+        <img class="cover" src="img/coverImage-banner.jpg" alt="Aerial view of the Banjul waterfront" />
+      </header>
 
-        <article>
-            <header></header>
-        </article>
+      <article class="intro">
+        <header>
+          <h2>Your first trip to the Gambia</h2>
+        </header>
+        <p>
+          We'll walk you through what you actually need to know before landing,
+          how to connect with locals, what foods to try, and where to go once
+          you step outside the resort.
+        </p>
+        <p>
+          Most first timers land in Banjul and head straight for the coast 
+          but the best introduction to the country happens a little further out.
+        </p>
         
+      </article>
+
+      <article class="scene">
+        <figure class="scene__photo">
+          <img src="img/roadside.jpg" alt="Roadside stall selling watermelons and woven baskets" />
+        </figure>
+        <header>
+          <h3>Life beyond the resort</h3>
+        </header>
+        <p>
+          Roadside stalls like this are where the country actually happens.
+          Carry small dalasi notes, greet before you haggle, and expect the
+          conversation to matter more than the price.
+        </p>
+      </article>
+
+      <footer class="cta-row">
+        <a class="cta" href="#guide">Explore the guide</a>
+      </footer>
     </section>
 
-    </body>
+    <aside class="sidebar">
+      <h2>Find your way in</h2>
+      <p>Four places to start.</p>
+      <ul>
+        <li><a href="#"><span class="sidebar__icon">🧺</span> Culture & Manners</a></li>
+        <li><a href="#"><span class="sidebar__icon">☕</span> Food to Try</a></li>
+        <li><a href="#"><span class="sidebar__icon">🍹</span> Places to Visit</a></li>
+        <li><a href="#"><span class="sidebar__icon">🎵</span> Music & Culture</a></li>
+      </ul>
+    </aside>
+
+    <footer class="site-footer">
+      <p>Smiling Coast Guide — built for first-time visitors to the Gambia.</p>
+    </footer>
+  </body>
 </html>
