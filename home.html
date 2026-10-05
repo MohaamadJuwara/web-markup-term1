@@ -8,106 +8,88 @@
 		<meta name="author" content="M. Juwara">
 		<title>Smiling Coast Guide | Home</title>
 		<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;family=Vast+Shadow&amp;display=swap">
-		<link rel="stylesheet" type="text/css" href="css/home.css">
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;family=Vast+Shadow&amp;display=swap">
+		<link rel="stylesheet" type="text/css" href="home.css">
 	</head>
 	<body>
 		<header class="site-header">
-			<a class="logo" href="home.html">Smiling Coast</a>
+			<a class="logo" href="index.html">
+				<svg class="logo-icon" width="18" height="10" viewBox="0 0 18 10" aria-hidden="true"><path d="M1 2 Q9 12 17 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+				Smiling Coast
+			</a>
 			<nav class="site-nav">
 				<ul>
-					<li><a href="#">Culture &amp; Manners</a></li>
-					<li><a href="#">Food to Try</a></li>
-					<li><a href="#">Places to Visit</a></li>
-					<li><a href="#">Music &amp; Stories</a></li>
+					<li><a href="culture.html">Culture &amp; Manners</a></li>
+					<li><a href="food.html">Food to Try</a></li>
+					<li><a href="places.html">Places to Visit</a></li>
+					<li><a href="music.html">Music &amp; Stories</a></li>
 				</ul>
 			</nav>
 			<a class="btn" href="contact.html">Contact</a>
 		</header>
 
 		<main>
-			<header class="hero">
+			<section class="hero">
 				<figure class="hero-image">
 					<img src="img/coverImage-banner.jpg" alt="Aerial view of the Banjul waterfront" title="The Banjul waterfront from above">
-					<figcaption>Banjul, the Gambia</figcaption>
+					<figcaption class="visually-hidden">Banjul, the Gambia</figcaption>
 				</figure>
-				<section class="hero-content">
-					<p class="eyebrow">Travel guide for first-timers</p>
-					<h1>Discover the Smiling Coast</h1>
-					<p>
-						Everything a first-time visitor needs to know: local customs, dishes
-						worth trying, places to see and the music &amp; stories behind them.
-					</p>
-					<a class="btn" href="#explore">Explore now</a>
-				</section>
-			</header>
+				<header class="hero-content">
+					<h1>Welcome to the Smiling Coast</h1>
+					<p class="hero-text">Your <strong>first trip</strong> to the Gambia? We will guide you through what you actually need to know before landing: how to connect with locals, what foods to try, where to go beyond your resort, nature, wildlife and the amazing music of the Gambia. Start exploring below.</p>
+					<a class="btn" href="#explore">Explore More</a>
+				</header>
+			</section>
+
+			<article class="market">
+				<h2 class="visually-hidden">Market tips</h2>
+				<p class="market-text">The side market sells fresh produce, fabric and handwoven baskets. Most stalls are busiest in the morning and start closing by early afternoon. Prices aren't fixed, so offer roughly half of what's asked and expect to land somewhere in the middle. Keep <em>small notes</em> on hand, since vendors often can't break large bills.</p>
+				<figure class="market-image">
+					<img src="img/roadside.jpg" alt="Roadside stall selling watermelons and woven baskets" title="A roadside market outside Banjul">
+					<figcaption class="visually-hidden">Roadside stalls are where everyday life happens.</figcaption>
+				</figure>
+			</article>
 
 			<section class="explore" id="explore">
-				<h2>Explore the guide</h2>
+				<h2 class="visually-hidden">Explore the guide</h2>
 				<ul class="card-grid">
 					<li>
-						<a class="card" href="#">
+						<a class="card" href="culture.html">
 							<span class="card-icon">🤝</span>
 							<span class="card-label">Culture &amp; Manners</span>
 						</a>
 					</li>
 					<li>
-						<a class="card" href="#">
+						<a class="card" href="food.html">
 							<span class="card-icon">🍲</span>
 							<span class="card-label">Food to Try</span>
 						</a>
 					</li>
 					<li>
-						<a class="card" href="#">
+						<a class="card" href="places.html">
 							<span class="card-icon">🌴</span>
 							<span class="card-label">Places to Visit</span>
 						</a>
 					</li>
 					<li>
-						<a class="card" href="#">
+						<a class="card" href="music.html">
 							<span class="card-icon">🥁</span>
 							<span class="card-label">Music &amp; Stories</span>
 						</a>
 					</li>
 				</ul>
 			</section>
-
-			<article class="story">
-				<h2>Your first trip to the Gambia</h2>
-				<figure class="float-figure">
-					<img src="img/roadside.jpg" alt="Roadside stall selling watermelons and woven baskets" title="A roadside stall outside Banjul">
-					<figcaption>Roadside stalls are where everyday life happens.</figcaption>
-				</figure>
-				<p class="lead">
-					Most first-timers land in Banjul and head straight for the coast, but
-					the best introduction to the country happens a little further out.
-				</p>
-				<p>
-					The Gambia is the smallest country on mainland Africa, a thin strip of
-					land along the Gambia River. It is called <em>the Smiling Coast</em>
-					because of how warmly visitors are welcomed.
-				</p>
-				<p>
-					This guide walks you through what you <strong>actually</strong> need to
-					know before landing: how to greet people, what to eat, where to go and
-					what to listen to once you step outside the resort.
-				</p>
-			</article>
-
-			<aside class="tip">
-				<h2>Good to know</h2>
-				<ul>
-					<li>The currency is the dalasi. Hotels often quote prices in &euro; or &pound;, but markets only take dalasi.</li>
-					<li>English is the official language. Wolof and Mandinka are spoken everywhere.</li>
-					<li>The dry season, from November to May, is the best time to visit.</li>
-				</ul>
-			</aside>
 		</main>
 
 		<footer class="site-footer">
-			<p>&copy; 2026 Smiling Coast Guide&trade; by M. Juwara</p>
-			<ul>
-				<li><a href="home.html">Home</a></li>
+			<p class="footer-info">
+				<svg class="logo-icon" width="18" height="10" viewBox="0 0 18 10" aria-hidden="true"><path d="M1 2 Q9 12 17 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+				<span class="footer-copy">&copy; 2026 Smiling Coast</span>
+				<small class="footer-note">Written from real experience. Gambia &amp; the Netherlands</small>
+			</p>
+			<ul class="footer-links">
+				<li><a href="#">Terms &amp; Conditions</a></li>
+				<li><a href="places.html">Places to Visit</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
 		</footer>

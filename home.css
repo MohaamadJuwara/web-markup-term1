@@ -1,0 +1,476 @@
+/* =========================================================
+	Smiling Coast Guide - Home page
+	Desktop first.
+	Tablet: 1024px and smaller. Smartphone: 768px and smaller.
+	========================================================= */
+
+
+/* ===== Base ===== */
+
+/* Width and height include padding and border */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Page font, text color and cream background */
+body {
+	margin: 0;
+	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	line-height: 1.6;
+	color: #161616;
+	background-color: #F8F3EA;
+}
+
+/* Images never grow wider than their box */
+img {
+	display: block;
+	max-width: 100%;
+}
+
+/* Remove the default indent browsers give to figure */
+figure {
+	margin: 0;
+}
+
+/* Hides text that is needed for structure but not shown in the design.
+	position: absolute takes it out of the layout,
+	text-indent moves the text out of view. Screen readers still read it. */
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: 0;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+
+/* ===== Headings ===== */
+
+/* Display font from the design */
+h1,
+h2 {
+	margin: 0 0 1.25rem;
+	font-family: "Vast Shadow", Georgia, serif;
+	font-weight: 400;
+	line-height: 1.2;
+	letter-spacing: -0.02em;
+}
+
+h1 {
+	font-size: 2.75rem;
+}
+
+
+/* ===== Buttons ===== */
+
+/* Gold pill button (Contact, Explore More, cookie OK) */
+.btn {
+	display: inline-block;
+	padding: 0.5rem 1.5rem;
+	background-color: #B8922E;
+	color: #3B1E0C;
+	font-size: 0.875rem;
+	font-weight: 500;
+	text-decoration: none;
+	border-radius: 2rem;
+}
+
+/* Button colors flip on hover, click and keyboard focus */
+.btn:hover,
+.btn:active,
+.btn:focus {
+	background-color: #5A2D12;
+	color: #FFFFFF;
+}
+
+
+/* ===== Site header ===== */
+
+/* White bar: logo left, menu middle, button right.
+	Border: 0 top, 0 sides, 1px bottom = thin line under the header.
+	position + z-index keep the header above the page content. */
+.site-header {
+	position: relative;
+	z-index: 10;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.75rem 2.5rem;
+	background-color: #FFFFFF;
+	border-width: 0 0 1px;
+	border-style: solid;
+	border-color: #E5E5E5;
+}
+
+/* Logo: smile icon next to the name */
+.logo {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: #5A2D12;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+/* Gold smile icon */
+.logo-icon {
+	color: #B8922E;
+}
+
+/* Menu in one row, without bullets */
+.site-nav ul {
+	display: flex;
+	gap: 2rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Menu links: only links directly inside the list items */
+.site-nav li > a {
+	color: #5A2D12;
+	font-size: 0.875rem;
+	text-decoration: none;
+}
+
+/* Menu links on hover, click and keyboard focus */
+.site-nav li > a:hover,
+.site-nav li > a:active,
+.site-nav li > a:focus {
+	color: #B8922E;
+	text-decoration: underline;
+}
+
+
+/* ===== Hero and market rows ===== */
+
+/* Image and text side by side, centered on the page */
+.hero,
+.market {
+	display: flex;
+	align-items: center;
+	gap: 4rem;
+	max-width: 82rem;
+	margin: 0 auto;
+	padding: 4.5rem 2.5rem;
+}
+
+/* Image and text share the row equally */
+.hero-image,
+.hero-content,
+.market-text,
+.market-image {
+	flex: 1;
+}
+
+/* Photos fill their box, cropped neatly, with rounded corners */
+.hero-image img,
+.market-image img {
+	width: 100%;
+	object-fit: cover;
+	border-radius: 0.5rem;
+}
+
+/* Hero photo is taller than the market photo, as in the design */
+.hero-image img {
+	height: 23rem;
+}
+
+.market-image img {
+	height: 19rem;
+}
+
+/* Intro text under the heading */
+.hero-text {
+	margin: 0 0 1.5rem;
+	font-size: 1.125rem;
+	font-weight: 500;
+	word-spacing: 0.05em;
+}
+
+/* Market tip text */
+.market-text {
+	margin: 0;
+	font-size: 1.125rem;
+	font-weight: 500;
+}
+
+/* First letter of the market tip in brown */
+.market-text::first-letter {
+	color: #5A2D12;
+	font-weight: 600;
+}
+
+
+/* ===== Explore the guide (category links) ===== */
+
+/* Space around the icon row */
+.explore {
+	padding: 1rem 2.5rem 3.5rem;
+}
+
+/* Four categories in one row, centered */
+.card-grid {
+	display: flex;
+	justify-content: center;
+	gap: 2.5rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* Each category: icon circle above its label */
+.card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	width: 6rem;
+	color: #5A2D12;
+	font-size: 0.75rem;
+	font-weight: 600;
+	line-height: 1.3;
+	text-align: center;
+	text-decoration: none;
+}
+
+/* Round icon background */
+.card-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 50%;
+	font-size: 1.5rem;
+}
+
+/* A different soft color for each circle */
+.card-grid > li:nth-child(1) .card-icon {
+	background-color: #EED9C4;
+}
+
+.card-grid > li:nth-child(2) .card-icon {
+	background-color: #D5EDE2;
+}
+
+.card-grid > li:nth-child(3) .card-icon {
+	background-color: #F5EDB8;
+}
+
+.card-grid > li:nth-child(4) .card-icon {
+	background-color: #F5DCC4;
+}
+
+/* Underline the label on hover, click and keyboard focus */
+.card:hover .card-label,
+.card:active .card-label,
+.card:focus .card-label {
+	text-decoration: underline;
+}
+
+
+/* ===== Footer ===== */
+
+/* Brown bar at the bottom of the page */
+.site-footer {
+	padding: 1.25rem 2.5rem;
+	background-color: #7A3E1D;
+	color: #FFFFFF;
+	font-size: 0.75rem;
+}
+
+/* Footer closes below the two floated parts */
+.site-footer::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/* Copyright block floats to the left */
+.footer-info {
+	float: left;
+	margin: 0;
+}
+
+/* Icon, copyright and note each on their own line */
+.footer-info svg,
+.footer-copy,
+.footer-note {
+	display: block;
+}
+
+/* Smaller, softer second line */
+.footer-note {
+	font-size: 0.6875rem;
+	opacity: 0.75;
+}
+
+/* Links float to the right, in one row */
+.footer-links {
+	float: right;
+	display: flex;
+	gap: 1.5rem;
+	margin: 2rem 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.footer-links a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.footer-links a:hover,
+.footer-links a:active,
+.footer-links a:focus {
+	text-decoration: underline;
+}
+
+
+/* ===== Cookie message ===== */
+
+/* Pinned to the bottom of the screen, on top of everything */
+.cookies {
+	position: fixed;
+	right: 1rem;
+	bottom: 1rem;
+	left: 1rem;
+	z-index: 9999;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.75rem 1.25rem;
+	background-color: #5A2D12;
+	color: #FFFFFF;
+	font-size: 0.875rem;
+	border-radius: 0.5rem;
+}
+
+.cookies p {
+	margin: 0;
+}
+
+/* Cookie button in capitals */
+.cookies .btn {
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+/* Clicking "OK, got it" adds #cookies to the address bar,
+	which makes this rule hide the message */
+.cookies:target {
+	display: none;
+}
+
+
+/* ===== Tablet: 1024px and smaller ===== */
+@media (max-width: 1024px) {
+	/* Less side space in the header */
+	.site-header {
+		padding: 0.75rem 2rem;
+	}
+
+	/* Menu links closer together */
+	.site-nav ul {
+		gap: 1.25rem;
+	}
+
+	/* Smaller main heading */
+	h1 {
+		font-size: 2.25rem;
+	}
+
+	/* Tighter rows */
+	.hero,
+	.market {
+		gap: 2.5rem;
+		padding: 3.5rem 2rem;
+	}
+
+	/* Shorter photos */
+	.hero-image img {
+		height: 19rem;
+	}
+
+	.market-image img {
+		height: 16rem;
+	}
+}
+
+
+/* ===== Smartphone: 768px and smaller ===== */
+@media (max-width: 768px) {
+	/* Header parts stacked */
+	.site-header {
+		flex-direction: column;
+		gap: 0.75rem;
+		padding: 1rem;
+	}
+
+	/* Menu links wrap and center */
+	.site-nav ul {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem 1.25rem;
+	}
+
+	/* Main heading fits a narrow screen */
+	h1 {
+		font-size: 1.75rem;
+	}
+
+	/* Image above text */
+	.hero,
+	.market {
+		flex-direction: column;
+		gap: 1.5rem;
+		padding: 2.5rem 1.25rem;
+	}
+
+	/* Market: text comes first in the HTML, so reverse to show the image first */
+	.market {
+		flex-direction: column-reverse;
+	}
+
+	/* Photos a bit shorter on phones */
+	.hero-image img,
+	.market-image img {
+		height: 14rem;
+	}
+
+	/* Normal text size on phones */
+	.hero-text,
+	.market-text {
+		font-size: 1rem;
+	}
+
+	/* Categories in two rows if needed */
+	.card-grid {
+		flex-wrap: wrap;
+		gap: 1.5rem;
+	}
+
+	/* No floats on phones: copyright and links stacked */
+	.footer-info,
+	.footer-links {
+		float: none;
+	}
+
+	.footer-links {
+		flex-wrap: wrap;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+
+	/* Cookie text above the button */
+	.cookies {
+		flex-direction: column;
+		text-align: center;
+	}
+}
