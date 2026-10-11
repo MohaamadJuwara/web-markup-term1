@@ -110,7 +110,6 @@ img {
 	grid-template-columns: repeat(3, 1fr);
 	gap: 2rem;
 	max-width: 80rem;
-	height: 900px;
 	margin: 0 auto;
 	padding: 0 2.5rem 4rem;
 	list-style: none;
@@ -224,6 +223,51 @@ img {
 
 .cookies:target {
 	display: none;
+}
+
+@media (max-width: 1024px) {
+	.header-culture {
+		padding: 12px 32px;
+	}
+
+	.nav-culture ul {
+		gap: 1.25rem;
+	}
+
+	.culture-intro,
+	.greetings-h2,
+	.greetings-list {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	.greetings-list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.footer-culture {
+		flex-direction: column;
+		gap: 0.75rem;
+		text-align: center;
+	}
+}
+
+@media (max-width: 768px) {
+	.header-culture {
+		flex-direction: column;
+		gap: 0.75rem;
+		padding: 12px 16px;
+	}
+
+	.nav-culture ul {
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 0.5rem 1rem;
+	}
+
+	.greetings-list {
+		grid-template-columns: 1fr;
+	}
 }
 
 
