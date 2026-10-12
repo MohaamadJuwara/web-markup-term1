@@ -275,3 +275,8 @@ img {
 
 
 
+
+.food-list .greetings-card img {
+	height: auto;
+	aspect-ratio: 1 / 1;
+}
