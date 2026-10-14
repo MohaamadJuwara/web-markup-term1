@@ -1,44 +1,40 @@
+/* Smiling Coast - stylesheet for all pages */
 
-*,
-*::before,
-*::after {
+/* ---------- General ---------- */
+
+/* Padding and border are included in the width */
+* {
 	box-sizing: border-box;
 }
 
-/* Page font, text color and cream background */
 body {
 	margin: 0;
-	font-family: "Poppins", Arial, Helvetica, sans-serif;
+	font-family: "Poppins", Arial, sans-serif;
 	font-size: 1rem;
 	line-height: 1.6;
 	color: #161616;
 	background-color: #F8F3EA;
 }
 
-/* Images never grow wider than their box */
 img {
 	display: block;
 	max-width: 100%;
 }
 
-/* Remove the default indent browsers give to figure */
 figure {
 	margin: 0;
 }
 
+/* Hides text on the screen, but screen readers can still read it */
 .visually-hidden {
 	position: absolute;
 	width: 1px;
 	height: 1px;
-	margin: 0;
 	overflow: hidden;
 	text-indent: -9999px;
 }
 
-
-/* ===== 2. Buttons ===== */
-
-/* Gold pill button (Contact, Explore More, cookie OK) */
+/* Gold button */
 .btn {
 	display: inline-block;
 	padding: 0.5rem 1.5rem;
@@ -50,24 +46,16 @@ figure {
 	border-radius: 2rem;
 }
 
-/* Button colors flip on hover, click and keyboard focus */
 .btn:hover,
-.btn:active,
-.btn:focus {
+.btn:active {
 	background-color: #5A2D12;
 	color: #FFFFFF;
 }
 
 
-/* ===== 3. Site header and menu ===== */
+/* ---------- Header and menu ---------- */
 
-/* White bar: logo left, menu middle, button right.
-	Border: 0 top, 0 sides, 1px bottom = thin line under the header.
-	position + z-index keep the header above the page content.
-	Side padding 2.5rem, as on the homepage, so the logo and Contact button don't touch the screen edges. */
 .site-header {
-	position: relative;
-	z-index: 10;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -78,7 +66,6 @@ figure {
 	border-color: #E5E5E5;
 }
 
-/* Logo: smile icon next to the name */
 .logo {
 	display: flex;
 	align-items: center;
@@ -88,36 +75,31 @@ figure {
 	text-decoration: none;
 }
 
-/* Smile icon in the same brown as the logo text */
 .logo-svg {
 	color: #874520;
 }
 
-/* Menu in one row, without bullets */
 .site-nav ul {
 	display: flex;
 	gap: 2rem;
-	list-style: none;
 	margin: 0;
 	padding: 0;
+	list-style: none;
 }
 
-/* Menu links: only links directly inside the list items */
 .site-nav li > a {
 	color: #5A2D12;
 	font-size: 0.875rem;
 	text-decoration: none;
 }
 
-/* Menu links on hover, click and keyboard focus */
 .site-nav li > a:hover,
-.site-nav li > a:active,
-.site-nav li > a:focus {
+.site-nav li > a:active {
 	color: #B8922E;
 	text-decoration: underline;
 }
 
-/* The page you are on gets a beige pill */
+/* The menu link of the page you are on */
 .site-nav a[aria-current="page"] {
 	padding: 0.375rem 0.75rem;
 	background-color: #EBDCC8;
@@ -125,24 +107,17 @@ figure {
 }
 
 
-/* ===== 4. Site footer ===== */
+/* ---------- Footer ---------- */
 
-/* Brown bar at the bottom of the page */
+/* overflow: hidden makes the footer go around the floated parts */
 .site-footer {
+	overflow: hidden;
 	padding: 1.25rem;
 	background-color: #7A3E1D;
 	color: #FFFFFF;
 	font-size: 0.75rem;
 }
 
-/* Footer closes below the two floated parts */
-.site-footer::after {
-	content: "";
-	display: block;
-	clear: both;
-}
-
-/* Copyright block floats to the left: icon and text in one row */
 .footer-info {
 	float: left;
 	display: flex;
@@ -151,10 +126,8 @@ figure {
 	margin: 0;
 }
 
-/* Links float to the right */
 .footer-links {
 	float: right;
-	display: flex;
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -166,15 +139,14 @@ figure {
 }
 
 .footer-links a:hover,
-.footer-links a:active,
-.footer-links a:focus {
+.footer-links a:active {
 	text-decoration: underline;
 }
 
 
-/* ===== 5. Cookie message ===== */
+/* ---------- Cookie message ---------- */
 
-/* Pinned to the bottom of the screen, on top of everything */
+/* Stays at the bottom of the screen, on top of everything */
 .cookies {
 	position: fixed;
 	right: 1rem;
@@ -196,14 +168,60 @@ figure {
 	margin: 0;
 }
 
-/* Cookie button in capitals */
 .cookies .btn {
 	text-transform: uppercase;
 	letter-spacing: 0.05em;
 }
 
+/* Clicking "OK, got it" hides the message */
 .cookies:target {
 	display: none;
+}
+
+
+/* ---------- Shared headings and labels ---------- */
+
+/* Small uppercase text above a heading */
+.section-label {
+	margin: 0;
+	color: #8A6A1C;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.media-h2 {
+	margin: 0.25rem 0 0;
+	color: #3B1E0C;
+	font-family: "Vast Shadow", Georgia, serif;
+	font-size: 1.75rem;
+	font-weight: 400;
+}
+
+
+/* ---------- Home page ---------- */
+
+/* Photo and text next to each other */
+.hero {
+	display: flex;
+	align-items: center;
+	gap: 4rem;
+	max-width: 82rem;
+	margin: 0 auto;
+	padding: 3rem 2.5rem 2rem;
+}
+
+.hero-image,
+.hero-content {
+	flex: 1;
+}
+
+.hero-image img {
+	width: 100%;
+	height: 23rem;
+	object-fit: cover;
+	border-radius: 0.5rem;
 }
 
 .hero h1 {
@@ -212,46 +230,8 @@ figure {
 	font-size: 2.75rem;
 	font-weight: 400;
 	line-height: 1.2;
-	letter-spacing: -0.02em;
 }
 
-/* Image and text side by side, centered on the page */
-.hero,
-.market {
-	display: flex;
-	align-items: center;
-	gap: 4rem;
-	max-width: 82rem;
-	margin: 0 auto;
-	padding: 4.5rem 2.5rem;
-}
-
-/* Image and text share the row equally */
-.hero-image,
-.hero-content,
-.market-text,
-.market-image {
-	flex: 1;
-}
-
-/* Photos fill their box, cropped neatly, with rounded corners */
-.hero-image img,
-.market-image img {
-	width: 100%;
-	object-fit: cover;
-	border-radius: 0.5rem;
-}
-
-/* Hero photo is taller than the market photo, as in the design */
-.hero-image img {
-	height: 23rem;
-}
-
-.market-image img {
-	height: 390px;
-}
-
-/* Intro text under the heading */
 .hero-text {
 	margin: 0 0 1.5rem;
 	font-size: 1.125rem;
@@ -259,61 +239,47 @@ figure {
 	word-spacing: 0.05em;
 }
 
-/* Market tip text */
-.market-text {
-	margin: 0;
-	font-size: 1.125rem;
-	font-weight: 500;
-}
-
-/* First letter of the market tip in brown */
-.market-text::first-letter {
-	color: #5A2D12;
-	font-weight: 600;
-}
-
-/* Space around the category icon row */
+/* Category cards, 4 next to each other */
 .explore {
-	padding: 1rem 2.5rem 3.5rem;
+	max-width: 82rem;
+	margin: 0 auto;
+	padding: 2rem 2.5rem;
 }
 
-/* Four categories in one row, centered */
 .card-grid {
-	display: flex;
-	justify-content: center;
-	gap: 2.5rem;
-	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1.5rem;
 	margin: 0;
 	padding: 0;
+	list-style: none;
 }
 
-/* Each category: icon circle above its label */
 .card {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	gap: 0.5rem;
-	width: 6rem;
+	height: 100%;
+	padding: 1.5rem;
+	background-color: #FFFFFF;
 	color: #5A2D12;
-	font-size: 0.75rem;
-	font-weight: 600;
-	line-height: 1.3;
-	text-align: center;
 	text-decoration: none;
+	border-radius: 0.75rem;
 }
 
-/* Round icon background */
+/* Round circle behind the icon */
 .card-icon {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 3.5rem;
 	height: 3.5rem;
-	border-radius: 50%;
 	font-size: 1.5rem;
+	border-radius: 50%;
 }
 
-/* A different soft color for each circle */
+/* Every card gets its own circle color */
 .card-grid > li:nth-child(1) .card-icon {
 	background-color: #EED9C4;
 }
@@ -330,38 +296,108 @@ figure {
 	background-color: #F5DCC4;
 }
 
-/* Underline the label on hover, click and keyboard focus */
+.card-label {
+	margin: 0.25rem 0 0;
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+/* flex: 1 takes the free space, so the links at the bottom line up */
+.card-text {
+	flex: 1;
+	margin: 0;
+	color: #161616;
+	font-size: 0.875rem;
+}
+
+.card-more {
+	color: #874520;
+	font-size: 0.8125rem;
+	font-weight: 600;
+}
+
 .card:hover .card-label,
-.card:active .card-label,
-.card:focus .card-label {
+.card:active .card-label {
 	text-decoration: underline;
 }
 
-
-/* ===== 7. Culture, Food and Places pages ===== */
-
-/* Intro and card list share the same width, centered */
-.culture-intro,
-.greetings-h2 {
-	max-width: 85rem;
+/* overflow: hidden makes the section go around the floated photo */
+.market {
+	overflow: hidden;
+	max-width: 82rem;
 	margin: 0 auto;
-	padding: 0 2.5rem;
+	padding: 3rem 2.5rem;
 }
+
+/* The photo floats to the right, the text goes next to it */
+.market-image {
+	float: right;
+	width: 50%;
+	margin-left: 4rem;
+}
+
+.market-image img {
+	width: 100%;
+	height: 24rem;
+	object-fit: cover;
+	border-radius: 0.5rem;
+}
+
+.market .media-h2 {
+	margin-bottom: 1rem;
+}
+
+.market-text {
+	margin: 0;
+	font-size: 1.125rem;
+	font-weight: 500;
+}
+
+.market-text::first-letter {
+	color: #5A2D12;
+	font-weight: 600;
+}
+
+.market-more a {
+	color: #874520;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.market-more a:hover,
+.market-more a:active {
+	text-decoration: underline;
+}
+
+/* White box with a gold line on the left, 94% of the page wide */
+.about {
+	width: 94%;
+	max-width: 77rem;
+	margin: 4rem auto;
+	padding: 1.5rem 2rem;
+	background-color: #FFFFFF;
+	border-left: 0.25rem solid #B8922E;
+	border-radius: 0.75rem;
+}
+
+.about-text {
+	max-width: 50rem;
+	margin: 0.5rem 0 0;
+}
+
+
+/* ---------- Culture, Food and Places pages ---------- */
 
 .culture-intro {
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+	max-width: 85rem;
+	margin: 0 auto;
+	padding: 2rem 2.5rem;
 }
 
-/* Page heading: display font, 34px */
 .culture-h1 {
 	font-family: "Vast Shadow", Georgia, serif;
 	font-size: 2.125rem;
 	font-weight: 400;
-}
-
-.greetings-h2 {
-	margin-bottom: 1rem;
 }
 
 .culture-intro p {
@@ -389,7 +425,7 @@ figure {
 
 .greetings-card img {
 	width: 100%;
-	height: 300px;
+	height: 18.75rem;
 	object-fit: cover;
 }
 
@@ -403,28 +439,25 @@ figure {
 .greetings-card p {
 	margin: 0 1rem 1.25rem;
 	font-size: 0.8125rem;
-	line-height: 24px;
+	line-height: 1.5rem;
 }
 
-/* Food page: square photos, height the same as the width */
+/* Food page: square photos */
 .food-list .greetings-card img {
 	height: auto;
 	aspect-ratio: 1 / 1;
 }
 
 
-/* ===== 8. Music page ===== */
+/* ---------- Music page ---------- */
 
-/* Hero: text on the left, video on the right, on a brown panel.
-	space-between pushes the text to the left edge and the video to the right edge,
-	and the equal side padding (4rem) keeps both the same distance from the panel edge.
-	Same brown (#7A3E1D) as the audio cards and the footer. */
+/* Brown box with the text on the left and the video on the right */
 .music-hero {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 4rem;
-	width: calc(100% - 5rem);
+	width: 94%;
 	max-width: 80rem;
 	margin: 2rem auto 0;
 	padding: 2.5rem 4rem;
@@ -434,10 +467,9 @@ figure {
 }
 
 .music-hero-text {
-	flex: 0 1 32rem;
+	max-width: 32rem;
 }
 
-/* Small label above the hero heading, in the light yellow from the palette */
 .hero-label {
 	margin: 0;
 	color: #F5EDB8;
@@ -455,32 +487,20 @@ figure {
 	line-height: 1.2;
 }
 
-.music-hero-text p:not(.hero-label) {
-	max-width: 30rem;
-	margin: 0 0 1.5rem;
-	opacity: 0.9;
-}
-
-/* Highlighted words in the hero text, in the light yellow from the palette */
 .music-hero-text strong {
 	color: #F5EDB8;
 }
 
-/* Upright phone video: fixed height, width follows its shape.
-	Shadow uses the darkest brown (#3B1E0C) at 35% instead of black */
 .hero-video {
 	display: block;
-	width: auto;
 	max-width: 50%;
-	height: 380px;
+	height: 24rem;
 	border-radius: 0.75rem;
-	box-shadow: 0 1rem 2rem rgba(59, 30, 12, 0.35);
 }
 
-/* "What is a griot?" box: white card with a gold line on the left, like the tip cards.
-	Same width and side position as the hero, so it lines up with the rest of the content. */
+/* White box with a gold line on the left */
 .griot-box {
-	width: calc(100% - 5rem);
+	width: 94%;
 	max-width: 80rem;
 	margin: 2rem auto 0;
 	padding: 1.5rem 2rem;
@@ -489,7 +509,6 @@ figure {
 	border-radius: 0.75rem;
 }
 
-/* Griot box heading in the display font, a bit smaller than the section headings */
 .griot-box h2 {
 	margin: 0 0 0.5rem;
 	color: #3B1E0C;
@@ -498,40 +517,21 @@ figure {
 	font-weight: 400;
 }
 
-/* Griot box text, kept to a readable line length */
 .griot-box p {
 	max-width: 50rem;
 	margin: 0;
-	font-size: 0.9375rem;
 }
 
-/* Videos, Audio stories and Photos sections */
+/* The sections under the hero */
 .media-section {
 	max-width: 85rem;
 	margin: 0 auto;
 	padding: 4rem 2.5rem 0;
 }
 
+/* Extra space under the last section */
 .media-section:last-child {
 	padding-bottom: 5rem;
-}
-
-/* Small uppercase section labels ("01 · Watch"): darker gold #8A6A1C for better contrast on the cream background */
-.section-label {
-	margin: 0;
-	color: #8A6A1C;
-	font-size: 0.75rem;
-	font-weight: 600;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-}
-
-.media-h2 {
-	margin: 0.25rem 0 0;
-	color: #3B1E0C;
-	font-family: "Vast Shadow", Georgia, serif;
-	font-size: 1.75rem;
-	font-weight: 400;
 }
 
 .media-intro {
@@ -542,89 +542,67 @@ figure {
 
 .video-grid,
 .audio-grid,
-.photo-row {
+.photo-row,
+.tips-grid {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-/* The same white card for videos and photos */
+/* White card for a video or a photo */
 .media-card {
 	height: 100%;
 	overflow: hidden;
 	background-color: #FFFFFF;
 	border-radius: 0.75rem;
-	box-shadow: 0 2px 8px rgba(90, 45, 18, 0.08);
-	transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.media-card:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 10px 24px rgba(90, 45, 18, 0.18);
-}
-
-/* Photos and videos fill the card width; dark brown (#3B1E0C) shows behind a video before it loads */
 .media-card img,
 .media-card video {
 	display: block;
 	width: 100%;
-	height: auto;
-	background-color: #3B1E0C;
 }
 
-/* Card titles for videos and audio */
-.media-card h3,
-.audio-card h3 {
+.media-card h3 {
 	margin: 0;
 	padding: 1rem;
 	color: #5A2D12;
 	font-size: 1rem;
 	font-weight: 600;
-	line-height: 1.3;
 }
 
-/* Photo caption: regular weight and smaller, the bold title sits on top */
-.media-card figcaption {
-	padding: 1rem;
-	color: #161616;
-	font-size: 0.875rem;
-	font-weight: 400;
-	line-height: 1.5;
-}
-
-/* Caption title: on its own line and bold, in the same brown as the other card titles */
-.media-card figcaption strong {
-	display: block;
-	margin-bottom: 0.25rem;
-	color: #5A2D12;
-	font-size: 1rem;
-	font-weight: 600;
-	line-height: 1.3;
-}
-
-/* Videos: 3 equal columns, all the same phone shape */
-.video-grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1.5rem;
-}
-
-/* Short description under each video title */
 .media-card p {
 	margin: 0;
 	padding: 0 1rem 1rem;
 	font-size: 0.875rem;
 }
 
-/* Card videos: fixed height of 24rem, full card width, cropped neatly with cover,
-	so the upright phone videos don't make the cards too tall */
+.media-card figcaption {
+	padding: 1rem;
+	font-size: 0.875rem;
+}
+
+/* Title of the photo on its own line */
+.media-card figcaption strong {
+	display: block;
+	margin-bottom: 0.25rem;
+	color: #5A2D12;
+	font-size: 1rem;
+}
+
+/* 3 videos next to each other */
+.video-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.5rem;
+}
+
 .video-grid video {
-	width: 100%;
 	height: 24rem;
 	object-fit: cover;
 }
 
-/* Audio: 2 equal brown cards */
+/* 2 brown audio cards */
 .audio-grid {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -639,45 +617,21 @@ figure {
 	border-radius: 0.75rem;
 }
 
-/* Icon on the left, title and text stacked on the right */
-.audio-head {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	column-gap: 1rem;
-	align-items: start;
-	margin-bottom: 1.25rem;
-}
-
-/* 52px circle: 12px padding on each side + a 28px icon, gold circle with a dark brown note */
-.audio-icon {
-	grid-row: span 2;
-	width: 3.25rem;
-	height: 3.25rem;
-	padding: 0.75rem;
-	color: #3B1E0C;
-	background-color: #B8922E;
-	border-radius: 50%;
-}
-
 .audio-card h3 {
-	padding: 0;
-	color: #FFFFFF;
+	margin: 0;
+	font-size: 1rem;
 }
 
 .audio-text {
-	grid-column: 2;
-	margin: 0.25rem 0 0;
+	margin: 0.5rem 0 1.25rem;
 	font-size: 0.875rem;
-	opacity: 0.85;
 }
 
 .audio-card audio {
-	display: block;
 	width: 100%;
 }
 
-/* Photos: one row, all the same height, each photo keeps its own shape.
-	Flex grows by the photo's shape: tall photos 2 wide, the wide photo 4.5 wide */
+/* Photos in one row, the wide photo gets more space */
 .photo-row {
 	display: flex;
 	gap: 1.5rem;
@@ -691,20 +645,17 @@ figure {
 	flex: 4.5;
 }
 
-/* Good to know: 4 tip cards in a row, each with a gold line on top */
+/* 4 tips next to each other, with a gold line on top */
 .tips-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 1.5rem;
-	margin: 0;
-	padding: 0;
-	list-style: none;
 }
 
 .tips-grid li {
 	padding: 1.25rem;
 	background-color: #FFFFFF;
-	border-top: 4px solid #B8922E;
+	border-top: 0.25rem solid #B8922E;
 	border-radius: 0.75rem;
 }
 
@@ -712,8 +663,6 @@ figure {
 	margin: 0 0 0.5rem;
 	color: #5A2D12;
 	font-size: 1rem;
-	font-weight: 600;
-	line-height: 1.3;
 }
 
 .tips-grid p {
@@ -722,7 +671,7 @@ figure {
 }
 
 
-/* ===== 8b. Contact page ===== */
+/* ---------- Contact page ---------- */
 
 .contact-intro,
 .contact-layout {
@@ -736,7 +685,6 @@ figure {
 	font-weight: 500;
 }
 
-/* Small beige pill above the heading */
 .contact-badge {
 	display: inline-block;
 	margin: 0;
@@ -756,7 +704,7 @@ figure {
 	padding-bottom: 5rem;
 }
 
-/* The fieldset is a 2-column grid: name and email side by side */
+/* Name and email next to each other */
 .contact-form fieldset {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -770,9 +718,9 @@ figure {
 	margin: 0;
 }
 
-/* Subject, message and button use the full width */
+/* Subject, message and button take both columns */
 .field-full {
-	grid-column: 1 / -1;
+	grid-column: span 2;
 	margin: 0;
 }
 
@@ -783,7 +731,6 @@ figure {
 	font-weight: 500;
 }
 
-/* Text fields: white, with a thin beige (#EBDCC8) border from the palette */
 .field input,
 .field textarea {
 	width: 100%;
@@ -797,26 +744,17 @@ figure {
 	border-radius: 0.375rem;
 }
 
-.field textarea {
-	resize: vertical;
-}
-
-/* Brown border when you click into a field */
 .field input:focus,
 .field textarea:focus {
 	border-color: #874520;
-	outline: none;
 }
 
-/* The submit input looks like the other gold buttons */
 .contact-form .btn {
 	font-family: inherit;
-	font-weight: 600;
 	border-width: 0;
 	cursor: pointer;
 }
 
-/* Small orange-brown labels: "Contact details", "Opening hours" */
 .contact-label {
 	margin: 0 0 1rem;
 	color: #874520;
@@ -827,7 +765,6 @@ figure {
 	text-transform: uppercase;
 }
 
-/* Contact details, with a thin beige (#EBDCC8) line underneath */
 .contact-info address {
 	padding-bottom: 1.5rem;
 	font-style: normal;
@@ -840,26 +777,28 @@ figure {
 	list-style: none;
 }
 
-/* Icon on the left, small label and value stacked on the right */
+/* Icon, label and value in one row */
 .contact-list li {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	column-gap: 0.75rem;
+	display: flex;
 	align-items: center;
+	gap: 0.75rem;
 	margin-bottom: 0.75rem;
 	font-size: 0.875rem;
 	line-height: 1.3;
 }
 
+/* Beige circle with the symbol in the middle */
 .contact-icon {
-	grid-row: span 2;
-	padding: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 2.25rem;
+	height: 2.25rem;
 	color: #874520;
 	background-color: #EBDCC8;
 	border-radius: 50%;
 }
 
-/* Small labels above each contact detail ("Email", "Phone"), in the palette brown #874520 */
 .contact-small {
 	color: #874520;
 	font-size: 0.6875rem;
@@ -870,8 +809,7 @@ figure {
 	text-decoration: none;
 }
 
-.contact-list a:hover,
-.contact-list a:focus {
+.contact-list a:hover {
 	text-decoration: underline;
 }
 
@@ -898,13 +836,12 @@ figure {
 	text-align: right;
 }
 
-/* "Closed" in the palette brown #874520 and not bold, so it stands apart from the opening times */
 .hours-table .closed {
 	color: #874520;
 	font-weight: 400;
 }
 
-/* Table stripes: even rows light blue, odd rows white */
+/* Even rows light blue, odd rows white */
 .hours-table tbody tr:nth-child(even) {
 	background-color: #CFF;
 }
@@ -913,7 +850,6 @@ figure {
 	background-color: #FFF;
 }
 
-/* Map under the opening hours */
 .contact-map {
 	display: block;
 	width: 100%;
@@ -924,9 +860,8 @@ figure {
 }
 
 
-/* ===== 9. Tablet: 1024px and smaller ===== */
+/* ---------- Tablet ---------- */
 @media (max-width: 1024px) {
-	/* Header: less side space, menu links closer together */
 	.site-header {
 		padding: 0.75rem 2rem;
 	}
@@ -935,43 +870,61 @@ figure {
 		gap: 1.25rem;
 	}
 
-	/* Footer: no floats, copyright above the links, both centered */
+	/* Footer: no floats, everything in the middle */
+	.site-footer {
+		text-align: center;
+	}
+
 	.footer-info,
 	.footer-links {
 		float: none;
 		justify-content: center;
 	}
 
-	.site-footer {
-		text-align: center;
-	}
-
 	.footer-links {
 		margin-top: 0.75rem;
 	}
 
-	/* Home: smaller heading, tighter rows, shorter photos */
+	/* Home */
 	.hero h1 {
 		font-size: 2.25rem;
 	}
 
-	.hero,
-	.market {
+	.hero {
 		gap: 2.5rem;
-		padding: 3.5rem 2rem;
+		padding: 2rem;
 	}
 
 	.hero-image img {
 		height: 19rem;
 	}
 
+	.explore {
+		padding: 1.5rem 2rem;
+	}
+
+	.card-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.market {
+		padding: 2.5rem 2rem;
+	}
+
+	.market-image {
+		margin-left: 2.5rem;
+	}
+
 	.market-image img {
 		height: 16rem;
 	}
 
-	/* Culture, Food, Places: less side space, 2 card columns */
+	.about {
+		margin: 3rem auto;
+	}
+
+	/* Culture, Food and Places */
 	.culture-intro,
-	.greetings-h2,
 	.greetings-list {
 		padding-left: 1rem;
 		padding-right: 1rem;
@@ -982,20 +935,19 @@ figure {
 	}
 
 	/* Music */
-	.media-section {
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
-
-	/* Hero and griot box: same width on tablet, less padding */
 	.music-hero,
 	.griot-box {
-		width: calc(100% - 2rem);
+		width: 96%;
 	}
 
 	.music-hero {
 		gap: 2rem;
 		padding: 2rem;
+	}
+
+	.media-section {
+		padding-left: 1rem;
+		padding-right: 1rem;
 	}
 
 	.video-grid {
@@ -1006,7 +958,7 @@ figure {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	/* Contact: less side space */
+	/* Contact */
 	.contact-intro,
 	.contact-layout {
 		padding-left: 1rem;
@@ -1019,9 +971,8 @@ figure {
 }
 
 
-/* ===== 10. Smartphone: 768px and smaller ===== */
+/* ---------- Phone ---------- */
 @media (max-width: 768px) {
-	/* Header parts stacked, menu links wrap and center */
 	.site-header {
 		flex-direction: column;
 		gap: 0.75rem;
@@ -1034,27 +985,20 @@ figure {
 		gap: 0.5rem 1rem;
 	}
 
-	/* Cookie text above the button */
 	.cookies {
 		flex-direction: column;
 		text-align: center;
 	}
 
-	/* Home: heading fits a narrow screen, image above text */
-	.hero h1 {
-		font-size: 1.75rem;
-	}
-
-	.hero,
-	.market {
+	/* Home: everything under each other */
+	.hero {
 		flex-direction: column;
 		gap: 1.5rem;
-		padding: 2.5rem 1.25rem;
+		padding: 1.5rem 1.25rem;
 	}
 
-	/* Market: text comes first in the HTML, so reverse to show the image first */
-	.market {
-		flex-direction: column-reverse;
+	.hero h1 {
+		font-size: 1.75rem;
 	}
 
 	.hero-image img,
@@ -1067,26 +1011,40 @@ figure {
 		font-size: 1rem;
 	}
 
-	/* Categories in two rows if needed */
-	.card-grid {
-		flex-wrap: wrap;
-		gap: 1.5rem;
+	.explore {
+		padding: 1.5rem 1.25rem;
 	}
 
-	/* Culture, Food, Places: 1 card column */
+	.card-grid {
+		grid-template-columns: 1fr;
+	}
+
+	/* Market: no float, the photo on top of the text */
+	.market {
+		padding: 2rem 1.25rem;
+	}
+
+	.market-image {
+		float: none;
+		width: 100%;
+		margin: 0 0 1.5rem;
+	}
+
+	.about {
+		width: 90%;
+		margin: 2.5rem auto;
+		padding: 1.25rem;
+	}
+
+	/* Culture, Food and Places */
 	.greetings-list {
 		grid-template-columns: 1fr;
 	}
 
-	/* Music: everything stacked */
+	/* Music */
 	.music-hero {
 		flex-direction: column;
-		align-items: stretch;
 		padding: 1.5rem;
-	}
-
-	.music-hero-text {
-		flex: none;
 	}
 
 	.music-h1 {
@@ -1095,8 +1053,11 @@ figure {
 
 	.hero-video {
 		max-width: 100%;
-		height: 360px;
-		margin: 0 auto;
+		height: 22rem;
+	}
+
+	.griot-box {
+		padding: 1.25rem;
 	}
 
 	.media-section {
@@ -1104,32 +1065,26 @@ figure {
 	}
 
 	.video-grid,
-	.audio-grid {
+	.audio-grid,
+	.tips-grid {
 		grid-template-columns: 1fr;
 	}
 
-	/* Card videos: lower fixed height on phones, still full card width */
 	.video-grid video {
-		width: 100%;
 		height: 18rem;
-	}
-
-	/* Griot box: less padding on phones */
-	.griot-box {
-		padding: 1.25rem;
 	}
 
 	.photo-row {
 		flex-direction: column;
 	}
 
-	.tips-grid {
-		grid-template-columns: 1fr;
-	}
-
-	/* Contact: form above the details, one field per row */
+	/* Contact: one column */
 	.contact-layout,
 	.contact-form fieldset {
 		grid-template-columns: 1fr;
+	}
+
+	.field-full {
+		grid-column: auto;
 	}
 }
