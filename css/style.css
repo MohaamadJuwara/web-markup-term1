@@ -63,14 +63,15 @@ figure {
 
 /* White bar: logo left, menu middle, button right.
 	Border: 0 top, 0 sides, 1px bottom = thin line under the header.
-	position + z-index keep the header above the page content. */
+	position + z-index keep the header above the page content.
+	Side padding 2.5rem, as on the homepage, so the logo and Contact button don't touch the screen edges. */
 .site-header {
 	position: relative;
 	z-index: 10;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 0.75rem;
+	padding: 0.75rem 2.5rem;
 	background-color: #FFFFFF;
 	border-width: 0 0 1px;
 	border-style: solid;
@@ -414,17 +415,20 @@ figure {
 
 /* ===== 8. Music page ===== */
 
-/* Hero: text on the left, video on the right, on a dark brown panel */
+/* Hero: text on the left, video on the right, on a brown panel.
+	space-between pushes the text to the left edge and the video to the right edge,
+	and the equal side padding (4rem) keeps both the same distance from the panel edge.
+	Same brown (#7A3E1D) as the audio cards and the footer. */
 .music-hero {
 	display: flex;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	gap: 4rem;
 	width: calc(100% - 5rem);
 	max-width: 80rem;
 	margin: 2rem auto 0;
-	padding: 2.5rem;
-	background-color: #5A2D12;
+	padding: 2.5rem 4rem;
+	background-color: #7A3E1D;
 	color: #FFFFFF;
 	border-radius: 1rem;
 }
@@ -433,9 +437,10 @@ figure {
 	flex: 0 1 32rem;
 }
 
+/* Small label above the hero heading, in the light yellow from the palette */
 .hero-label {
 	margin: 0;
-	color: #E8C46A;
+	color: #F5EDB8;
 	font-size: 0.75rem;
 	font-weight: 600;
 	letter-spacing: 0.1em;
@@ -456,18 +461,48 @@ figure {
 	opacity: 0.9;
 }
 
+/* Highlighted words in the hero text, in the light yellow from the palette */
 .music-hero-text strong {
-	color: #E8C46A;
+	color: #F5EDB8;
 }
 
-/* Upright phone video: fixed height, width follows its shape */
+/* Upright phone video: fixed height, width follows its shape.
+	Shadow uses the darkest brown (#3B1E0C) at 35% instead of black */
 .hero-video {
 	display: block;
 	width: auto;
 	max-width: 50%;
 	height: 380px;
 	border-radius: 0.75rem;
-	box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.35);
+	box-shadow: 0 1rem 2rem rgba(59, 30, 12, 0.35);
+}
+
+/* "What is a griot?" box: white card with a gold line on the left, like the tip cards.
+	Same width and side position as the hero, so it lines up with the rest of the content. */
+.griot-box {
+	width: calc(100% - 5rem);
+	max-width: 80rem;
+	margin: 2rem auto 0;
+	padding: 1.5rem 2rem;
+	background-color: #FFFFFF;
+	border-left: 0.25rem solid #B8922E;
+	border-radius: 0.75rem;
+}
+
+/* Griot box heading in the display font, a bit smaller than the section headings */
+.griot-box h2 {
+	margin: 0 0 0.5rem;
+	color: #3B1E0C;
+	font-family: "Vast Shadow", Georgia, serif;
+	font-size: 1.25rem;
+	font-weight: 400;
+}
+
+/* Griot box text, kept to a readable line length */
+.griot-box p {
+	max-width: 50rem;
+	margin: 0;
+	font-size: 0.9375rem;
 }
 
 /* Videos, Audio stories and Photos sections */
@@ -481,9 +516,10 @@ figure {
 	padding-bottom: 5rem;
 }
 
+/* Small uppercase section labels ("01 · Watch"): darker gold #8A6A1C for better contrast on the cream background */
 .section-label {
 	margin: 0;
-	color: #B8922E;
+	color: #8A6A1C;
 	font-size: 0.75rem;
 	font-weight: 600;
 	letter-spacing: 0.1em;
@@ -527,19 +563,39 @@ figure {
 	box-shadow: 0 10px 24px rgba(90, 45, 18, 0.18);
 }
 
+/* Photos and videos fill the card width; dark brown (#3B1E0C) shows behind a video before it loads */
 .media-card img,
 .media-card video {
 	display: block;
 	width: 100%;
 	height: auto;
-	background-color: #000000;
+	background-color: #3B1E0C;
 }
 
+/* Card titles for videos and audio */
 .media-card h3,
-.media-card figcaption,
 .audio-card h3 {
 	margin: 0;
 	padding: 1rem;
+	color: #5A2D12;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.3;
+}
+
+/* Photo caption: regular weight and smaller, the bold title sits on top */
+.media-card figcaption {
+	padding: 1rem;
+	color: #161616;
+	font-size: 0.875rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+/* Caption title: on its own line and bold, in the same brown as the other card titles */
+.media-card figcaption strong {
+	display: block;
+	margin-bottom: 0.25rem;
 	color: #5A2D12;
 	font-size: 1rem;
 	font-weight: 600;
@@ -560,8 +616,11 @@ figure {
 	font-size: 0.875rem;
 }
 
+/* Card videos: fixed height of 24rem, full card width, cropped neatly with cover,
+	so the upright phone videos don't make the cards too tall */
 .video-grid video {
-	aspect-ratio: 9 / 16;
+	width: 100%;
+	height: 24rem;
 	object-fit: cover;
 }
 
@@ -589,14 +648,14 @@ figure {
 	margin-bottom: 1.25rem;
 }
 
-/* 52px circle: 12px padding on each side + a 28px icon */
+/* 52px circle: 12px padding on each side + a 28px icon, gold circle with a dark brown note */
 .audio-icon {
 	grid-row: span 2;
 	width: 3.25rem;
 	height: 3.25rem;
 	padding: 0.75rem;
 	color: #3B1E0C;
-	background-color: #E8C46A;
+	background-color: #B8922E;
 	border-radius: 50%;
 }
 
@@ -724,6 +783,7 @@ figure {
 	font-weight: 500;
 }
 
+/* Text fields: white, with a thin beige (#EBDCC8) border from the palette */
 .field input,
 .field textarea {
 	width: 100%;
@@ -733,7 +793,7 @@ figure {
 	background-color: #FFFFFF;
 	border-width: 1px;
 	border-style: solid;
-	border-color: #CFC4B4;
+	border-color: #EBDCC8;
 	border-radius: 0.375rem;
 }
 
@@ -767,11 +827,11 @@ figure {
 	text-transform: uppercase;
 }
 
-/* Contact details, with a line underneath */
+/* Contact details, with a thin beige (#EBDCC8) line underneath */
 .contact-info address {
 	padding-bottom: 1.5rem;
 	font-style: normal;
-	border-bottom: 1px solid #E5DCCD;
+	border-bottom: 1px solid #EBDCC8;
 }
 
 .contact-list {
@@ -799,8 +859,9 @@ figure {
 	border-radius: 50%;
 }
 
+/* Small labels above each contact detail ("Email", "Phone"), in the palette brown #874520 */
 .contact-small {
-	color: #8A7A6A;
+	color: #874520;
 	font-size: 0.6875rem;
 }
 
@@ -837,8 +898,9 @@ figure {
 	text-align: right;
 }
 
+/* "Closed" in the palette brown #874520 and not bold, so it stands apart from the opening times */
 .hours-table .closed {
-	color: #8A7A6A;
+	color: #874520;
 	font-weight: 400;
 }
 
@@ -925,8 +987,13 @@ figure {
 		padding-right: 1rem;
 	}
 
-	.music-hero {
+	/* Hero and griot box: same width on tablet, less padding */
+	.music-hero,
+	.griot-box {
 		width: calc(100% - 2rem);
+	}
+
+	.music-hero {
 		gap: 2rem;
 		padding: 2rem;
 	}
@@ -1041,11 +1108,15 @@ figure {
 		grid-template-columns: 1fr;
 	}
 
+	/* Card videos: lower fixed height on phones, still full card width */
 	.video-grid video {
-		width: auto;
-		max-width: 100%;
-		height: 480px;
-		margin: 0 auto;
+		width: 100%;
+		height: 18rem;
+	}
+
+	/* Griot box: less padding on phones */
+	.griot-box {
+		padding: 1.25rem;
 	}
 
 	.photo-row {
