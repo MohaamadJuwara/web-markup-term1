@@ -1,8 +1,4 @@
-/* Smiling Coast - stylesheet for all pages */
 
-/* ---------- General ---------- */
-
-/* Padding and border are included in the width */
 * {
 	box-sizing: border-box;
 }
@@ -106,8 +102,32 @@ figure {
 	border-radius: 2rem;
 }
 
+.site-nav a[aria-current="page-culture"] {
+	padding: 0.375rem 0.75rem;
+	background-color: #F0DCC8;
+	border-radius: 2rem;
+}
 
-/* ---------- Footer ---------- */
+.site-nav a[aria-current="page-food"] {
+	padding: 0.375rem 0.75rem;
+	background-color: #DBF1E3;
+	border-radius: 2rem;
+}
+
+.site-nav a[aria-current="page-place"] {
+	padding: 0.375rem 0.75rem;
+	background-color: #FBF0C8;
+	border-radius: 2rem;
+}
+
+.site-nav a[aria-current="page-music"] {
+	padding: 0.375rem 0.75rem;
+	background-color: #FBE3CC;
+	border-radius: 2rem;
+}
+
+
+
 
 /* overflow: hidden makes the footer go around the floated parts */
 .site-footer {
@@ -144,8 +164,6 @@ figure {
 }
 
 
-/* ---------- Cookie message ---------- */
-
 /* Stays at the bottom of the screen, on top of everything */
 .cookies {
 	position: fixed;
@@ -179,8 +197,6 @@ figure {
 }
 
 
-/* ---------- Shared headings and labels ---------- */
-
 /* Small uppercase text above a heading */
 .section-label {
 	margin: 0;
@@ -199,8 +215,6 @@ figure {
 	font-weight: 400;
 }
 
-
-/* ---------- Home page ---------- */
 
 /* Photo and text next to each other */
 .hero {
@@ -267,6 +281,8 @@ figure {
 	text-decoration: none;
 	border-radius: 0.75rem;
 }
+
+
 
 /* Round circle behind the icon */
 .card-icon {
@@ -655,7 +671,6 @@ figure {
 .tips-grid li {
 	padding: 1.25rem;
 	background-color: #FFFFFF;
-	border-top: 0.25rem solid #B8922E;
 	border-radius: 0.75rem;
 }
 
