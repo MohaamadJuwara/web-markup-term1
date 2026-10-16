@@ -248,7 +248,7 @@ figure {
 
 .hero-text {
 	margin: 0 0 1.5rem;
-	font-size: 1.125rem;
+	font-size: 1.25rem;
 	font-weight: 500;
 	word-spacing: 0.05em;
 }
@@ -419,6 +419,7 @@ figure {
 .culture-intro p {
 	max-width: 37.5rem;
 	font-weight: 500;
+	font-size: 20px;
 }
 
 /* Cards in 3 columns */
@@ -698,6 +699,7 @@ figure {
 .contact-intro p:last-child {
 	max-width: 30rem;
 	font-weight: 500;
+	
 }
 
 .contact-badge {
@@ -1023,7 +1025,7 @@ figure {
 
 	.hero-text,
 	.market-text {
-		font-size: 1rem;
+		font-size: 1.25rem;
 	}
 
 	.explore {
