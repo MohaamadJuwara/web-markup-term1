@@ -1,5 +1,5 @@
 Student name: Mohaamad Juwara 
 Student number: 766720
-Student class: 1A
+Student class: HAIT26FT1A
 GitHub Repository: https://github.com/MohaamadJuwara/web-markup-term1.git
-GitHub Pages URL: your github pages URL
+GitHub Pages URL: https://mohaamadjuwara.github.io/web-markup-term1 
