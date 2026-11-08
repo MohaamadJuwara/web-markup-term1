@@ -21,7 +21,6 @@ figure {
 	margin: 0;
 }
 
-/* Hides text on the screen, but screen readers can still read it */
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -30,7 +29,6 @@ figure {
 	text-indent: -9999px;
 }
 
-/* Gold button */
 .btn,
 .btn:visited {
 	display: inline-block;
@@ -50,8 +48,6 @@ figure {
 	color: #FFFFFF;
 }
 
-
-/* ---------- Header and menu ---------- */
 
 .site-header {
 	display: flex;
@@ -131,9 +127,6 @@ figure {
 }
 
 
-
-
-/* overflow: hidden makes the footer go around the floated parts */
 .site-footer {
 	overflow: hidden;
 	padding: 1.25rem;
@@ -170,7 +163,6 @@ figure {
 }
 
 
-/* Stays at the bottom of the screen, on top of everything */
 .cookies {
 	position: fixed;
 	right: 1rem;
@@ -197,20 +189,8 @@ figure {
 	letter-spacing: 0.05em;
 }
 
-/* Clicking "OK, got it" hides the message */
 .cookies:target {
 	display: none;
-}
-
-
-/* Small uppercase text above a heading */
-.section-label {
-	margin: 0;
-	color: #8A6A1C;
-	font-size: 0.75rem;
-	font-weight: 600;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
 }
 
 .media-h2 {
@@ -221,8 +201,6 @@ figure {
 	font-weight: 400;
 }
 
-
-/* Photo and text next to each other */
 .hero {
 	display: flex;
 	align-items: center;
@@ -259,7 +237,6 @@ figure {
 	word-spacing: 0.05em;
 }
 
-/* Category cards, 4 next to each other */
 .explore {
 	max-width: 82rem;
 	margin: 0 auto;
@@ -289,8 +266,6 @@ figure {
 }
 
 
-
-/* Round circle behind the icon */
 .card-icon {
 	display: flex;
 	justify-content: center;
@@ -301,7 +276,6 @@ figure {
 	border-radius: 50%;
 }
 
-/* Every card gets its own circle color */
 .card-grid > li:nth-child(1) .card-icon {
 	background-color: #EED9C4;
 }
@@ -324,7 +298,6 @@ figure {
 	font-weight: 600;
 }
 
-/* flex: 1 takes the free space, so the links at the bottom line up */
 .card-text {
 	flex: 1;
 	margin: 0;
@@ -344,7 +317,7 @@ figure {
 	text-decoration: underline;
 }
 
-/* overflow: hidden makes the section go around the floated photo */
+
 .market {
 	overflow: hidden;
 	max-width: 82rem;
@@ -352,7 +325,6 @@ figure {
 	padding: 3rem 2.5rem;
 }
 
-/* The photo floats to the right, the text goes next to it */
 .market-image {
 	float: right;
 	width: 50%;
@@ -394,24 +366,8 @@ figure {
 	text-decoration: underline;
 }
 
-/* White box with a gold line on the left, 94% of the page wide */
-.about {
-	width: 94%;
-	max-width: 77rem;
-	margin: 4rem auto;
-	padding: 1.5rem 2rem;
-	background-color: #FFFFFF;
-	border-left: 0.25rem solid #B8922E;
-	border-radius: 0.75rem;
-}
 
-.about-text {
-	max-width: 50rem;
-	margin: 0.5rem 0 0;
-}
-
-
-/* ---------- Culture, Food and Places pages ---------- */
+/* Culture, Food and Places pages */
 
 .culture-intro {
 	max-width: 85rem;
@@ -431,7 +387,6 @@ figure {
 	font-size: 20px;
 }
 
-/* Cards in 3 columns */
 .greetings-list {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -468,16 +423,14 @@ figure {
 	line-height: 1.5rem;
 }
 
-/* Food page: square photos */
 .food-list .greetings-card img {
 	height: auto;
 	aspect-ratio: 1 / 1;
 }
 
 
-/* ---------- Music page ---------- */
+/* Music page */
 
-/* Brown box with the text on the left and the video on the right */
 .music-hero {
 	display: flex;
 	justify-content: space-between;
@@ -487,22 +440,13 @@ figure {
 	max-width: 80rem;
 	margin: 2rem auto 0;
 	padding: 2.5rem 4rem;
-	background-color: #7A3E1D;
-	color: #FFFFFF;
+	background-color: #FBE3CC;
+	color: #161616;
 	border-radius: 1rem;
 }
 
 .music-hero-text {
 	max-width: 32rem;
-}
-
-.hero-label {
-	margin: 0;
-	color: #F5EDB8;
-	font-size: 0.75rem;
-	font-weight: 600;
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
 }
 
 .music-h1 {
@@ -514,7 +458,7 @@ figure {
 }
 
 .music-hero-text strong {
-	color: #F5EDB8;
+	color: #2B2420;
 }
 
 .hero-video {
@@ -524,7 +468,6 @@ figure {
 	border-radius: 0.75rem;
 }
 
-/* White box with a gold line on the left */
 .griot-box {
 	width: 94%;
 	max-width: 80rem;
@@ -548,14 +491,12 @@ figure {
 	margin: 0;
 }
 
-/* The sections under the hero */
 .media-section {
 	max-width: 85rem;
 	margin: 0 auto;
 	padding: 4rem 2.5rem 0;
 }
 
-/* Extra space under the last section */
 .media-section:last-child {
 	padding-bottom: 5rem;
 }
@@ -567,15 +508,12 @@ figure {
 }
 
 .video-grid,
-.audio-grid,
-.photo-row,
-.tips-grid {
+.photo-row {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-/* White card for a video or a photo */
 .media-card {
 	height: 100%;
 	overflow: hidden;
@@ -608,7 +546,7 @@ figure {
 	font-size: 0.875rem;
 }
 
-/* Title of the photo on its own line */
+
 .media-card figcaption strong {
 	display: block;
 	margin-bottom: 0.25rem;
@@ -616,7 +554,7 @@ figure {
 	font-size: 1rem;
 }
 
-/* 3 videos next to each other */
+
 .video-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -628,36 +566,6 @@ figure {
 	object-fit: cover;
 }
 
-/* 2 brown audio cards */
-.audio-grid {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1.5rem;
-}
-
-.audio-card {
-	height: 100%;
-	padding: 1.5rem;
-	background-color: #7A3E1D;
-	color: #FFFFFF;
-	border-radius: 0.75rem;
-}
-
-.audio-card h3 {
-	margin: 0;
-	font-size: 1rem;
-}
-
-.audio-text {
-	margin: 0.5rem 0 1.25rem;
-	font-size: 0.875rem;
-}
-
-.audio-card audio {
-	width: 100%;
-}
-
-/* Photos in one row, the wide photo gets more space */
 .photo-row {
 	display: flex;
 	gap: 1.5rem;
@@ -671,32 +579,8 @@ figure {
 	flex: 4.5;
 }
 
-/* 4 tips next to each other, with a gold line on top */
-.tips-grid {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-	gap: 1.5rem;
-}
 
-.tips-grid li {
-	padding: 1.25rem;
-	background-color: #FFFFFF;
-	border-radius: 0.75rem;
-}
-
-.tips-grid h3 {
-	margin: 0 0 0.5rem;
-	color: #5A2D12;
-	font-size: 1rem;
-}
-
-.tips-grid p {
-	margin: 0;
-	font-size: 0.875rem;
-}
-
-
-/* ---------- Contact page ---------- */
+/* Contact page */
 
 .contact-intro,
 .contact-layout {
@@ -710,17 +594,6 @@ figure {
 	font-weight: 500;	
 }
 
-.contact-badge {
-	display: inline-block;
-	margin: 0;
-	padding: 0.25rem 0.75rem;
-	background-color: #EBDCC8;
-	color: #5A2D12;
-	font-size: 0.75rem;
-	border-radius: 2rem;
-}
-
-/* Form on the left, contact details on the right */
 .contact-layout {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -729,7 +602,6 @@ figure {
 	padding-bottom: 5rem;
 }
 
-/* Name and email next to each other */
 .contact-form fieldset {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -743,7 +615,7 @@ figure {
 	margin: 0;
 }
 
-/* Subject, message and button take both columns */
+
 .field-full {
 	grid-column: span 2;
 	margin: 0;
@@ -802,7 +674,7 @@ figure {
 	list-style: none;
 }
 
-/* Icon, label and value in one row */
+
 .contact-list li {
 	display: flex;
 	align-items: center;
@@ -812,7 +684,6 @@ figure {
 	line-height: 1.3;
 }
 
-/* Beige circle with the symbol in the middle */
 .contact-icon {
 	display: flex;
 	justify-content: center;
@@ -840,7 +711,7 @@ figure {
 	text-decoration: underline;
 }
 
-/* Opening hours table */
+
 .hours-table {
 	width: 100%;
 	margin-top: 1.5rem;
@@ -868,7 +739,6 @@ figure {
 	font-weight: 400;
 }
 
-/* Even rows light blue, odd rows white */
 .hours-table tbody tr:nth-child(even) {
 	background-color: #CFF;
 }
@@ -887,7 +757,29 @@ figure {
 }
 
 
-/* ---------- Tablet ---------- */
+/* Terms page */
+.terms-page {
+	max-width: 48rem;
+	margin: 0 auto;
+	padding: 3rem 1.5rem 4rem;
+}
+
+
+.terms-date {
+	color: #6B5B4E;
+	font-size: 0.875rem;
+}
+
+.terms-section {
+	margin-top: 2rem;
+}
+
+.terms-section h2 {
+	margin-bottom: 0.5rem;
+	font-size: 1.25rem;
+	color: #7A3E1D;
+}
+
 @media (max-width: 1024px) {
 	.site-header {
 		padding: 0.75rem 2rem;
@@ -946,10 +838,6 @@ figure {
 		height: 16rem;
 	}
 
-	.about {
-		margin: 3rem auto;
-	}
-
 	/* Culture, Food and Places */
 	.culture-intro,
 	.greetings-list {
@@ -981,10 +869,6 @@ figure {
 		gap: 1rem;
 	}
 
-	.tips-grid {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
 	/* Contact */
 	.contact-intro,
 	.contact-layout {
@@ -998,7 +882,7 @@ figure {
 }
 
 
-/* ---------- Phone ---------- */
+/* Phone */
 @media (max-width: 768px) {
 	.site-header {
 		flex-direction: column;
@@ -1017,7 +901,7 @@ figure {
 		text-align: center;
 	}
 
-	/* Home: everything under each other */
+	
 	.hero {
 		flex-direction: column;
 		gap: 1.5rem;
@@ -1046,7 +930,6 @@ figure {
 		grid-template-columns: 1fr;
 	}
 
-	/* Market: no float, the photo on top of the text */
 	.market {
 		padding: 2rem 1.25rem;
 	}
@@ -1057,18 +940,11 @@ figure {
 		margin: 0 0 1.5rem;
 	}
 
-	.about {
-		width: 90%;
-		margin: 2.5rem auto;
-		padding: 1.25rem;
-	}
 
-	/* Culture, Food and Places */
 	.greetings-list {
 		grid-template-columns: 1fr;
 	}
 
-	/* Music */
 	.music-hero {
 		flex-direction: column;
 		padding: 1.5rem;
@@ -1091,9 +967,7 @@ figure {
 		padding-top: 3rem;
 	}
 
-	.video-grid,
-	.audio-grid,
-	.tips-grid {
+	.video-grid {
 		grid-template-columns: 1fr;
 	}
 
@@ -1105,7 +979,7 @@ figure {
 		flex-direction: column;
 	}
 
-	/* Contact: one column */
+
 	.contact-layout,
 	.contact-form fieldset {
 		grid-template-columns: 1fr;
@@ -1116,8 +990,6 @@ figure {
 	}
 }
 
-
-/* ---------- PC ---------- */
 @media (min-width: 769px) {
 	.site-header {
 		flex-direction: row;
